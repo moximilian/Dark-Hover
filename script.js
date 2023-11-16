@@ -1,14 +1,12 @@
-;(function () {
+; (function () {
     document.onmousemove = handleMouseMove
     function handleMouseMove(event) {
         var eventDoc, doc, body
-
-        event = event || window.event 
+        event = event || window.event
         if (event.pageX == null && event.clientX != null) {
             eventDoc = (event.target && event.target.ownerDocument) || document
             doc = eventDoc.documentElement
             body = eventDoc.body
-
             event.pageX =
                 event.clientX +
                 ((doc && doc.scrollLeft) || (body && body.scrollLeft) || 0) -
